@@ -23,3 +23,8 @@
 
 3. Favorites
 - You can add/delete favorite by right clicking the folder on the screen.
+
+![back](https://user-images.githubusercontent.com/56323360/150610831-7ed9f8e2-f04e-4fce-88ca-16c0442614fc.png)
+
+4. GoBack
+- Always go back to parent folder of the current folder on the screen.
