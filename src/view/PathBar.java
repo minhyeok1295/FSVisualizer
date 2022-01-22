@@ -30,6 +30,8 @@ public class PathBar extends TextField implements Observer{
 		});
 
 	}
+
+	//check if given string is a valid path.
 	public boolean isPath(String path) {
 		if (new File(path).exists()) {
 			return true;
@@ -37,7 +39,7 @@ public class PathBar extends TextField implements Observer{
 		return false;
 		
 	}
-	
+	//tree search method to recursively search item from the tree
 	public void searchItem(String item) {
 		FSNode res = null;
 		if (this.fs.curr != null) {

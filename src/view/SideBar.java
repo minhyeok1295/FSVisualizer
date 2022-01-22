@@ -26,6 +26,7 @@ public class SideBar extends ScrollPane implements Observer {
 		
 	}
 	
+	//Displays nodes in favorite list
 	public void displayFavorite(FileSystem fs) {
 		List<FSNode> favs = fs.favorites;
 		FlowPane fp = new FlowPane();

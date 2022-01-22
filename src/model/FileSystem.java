@@ -22,7 +22,7 @@ public class FileSystem extends Observable {
 		this.favorites = new ArrayList<FSNode>();
 	}
 	
-	
+	// getter method
 	public List<FSNode> getFavorites() {
 		return this.favorites;
 	}
@@ -39,16 +39,19 @@ public class FileSystem extends Observable {
 		return this.tree;
 	}
 	
+	//change the current node
 	public void setCurr(FSNode curr) {
 		this.curr = curr;
 		this.notifyObservers();
 	}
 	
+	//add the node to the list of favorites
 	public void addFavorite(FSNode fav) {
 		this.favorites.add(fav);
 		this.notifyObservers();
 	}
 	
+	//remove the node from the favorite list
 	public void removeFavorite(FSNode fav) {
 		this.favorites.remove(fav);
 		this.notifyObservers();
@@ -87,6 +90,8 @@ public class FileSystem extends Observable {
                 .toArray(String[]::new);
 	}
 	
+	
+	//traverse contents of folder and add to the tree.
 	public void traverse(FSNode node) {
 		node.path = node.path.concat("\\");
 		String contents[] = node.file.list();
@@ -130,6 +135,7 @@ public class FileSystem extends Observable {
 	}
 	
 	
+	//Main method to create tree based on the given path
 	public void createTree(String path) {
 		this.path = path;
 		String[] list = null;
@@ -147,7 +153,7 @@ public class FileSystem extends Observable {
 		this.notifyObservers();
 	}
 	
-	
+	//search node from the tree if node name equals the given string.
 	public FSNode searchTree(FSNode curr, String name) {
 		if (curr.name.equals(name)) {
 			return curr;

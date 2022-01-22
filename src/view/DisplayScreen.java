@@ -23,6 +23,7 @@ public class DisplayScreen extends ScrollPane implements Observer {
 		
 	}
 	
+	//Display sub-folders or files under current node(folder);
 	public void displayChildren(FileSystem fs) {
 		if (fs.curr != null) {
 			FSIconButtonEventHandler fsIcon = new FSIconButtonEventHandler(fs);

@@ -45,8 +45,6 @@ public class FSApplication extends Application {
 		topBox.setStyle("-fx-background-color: #ffebcd;");
 		
 		PathBar pBar = new PathBar(fileSystem);
-		
-		 
 
 		DisplayScreen screen = new DisplayScreen(fileSystem);
 		
@@ -70,6 +68,7 @@ public class FSApplication extends Application {
 		gButton.setOnAction(goBack);
 		
 		
+		//PathBar to include search, browse and goback button.
 		HBox pathBarBox = new HBox();
 		pathBarBox.getChildren().addAll(pBar, pButton);
 		pathBarBox.setStyle("-fx-background-color: #ffebcd;");
@@ -78,7 +77,8 @@ public class FSApplication extends Application {
 		
 		topBox.getChildren().addAll(gButton, pathBarBox, bButton);
 		topBox.setAlignment(Pos.CENTER);
-
+		
+		//SideBar for favorite section
 		SideBar sideBar = new SideBar(fileSystem, pane);	
 		VBox sideBox = new VBox();
 		sideBox.setStyle("-fx-background-color: #ffebcd;");
@@ -99,15 +99,18 @@ public class FSApplication extends Application {
 		favText.setText("Favorites");
 		favText.setFont(new Font(15));
 		
+		
+		
 		sideBox.getChildren().addAll(favText, sideBar);
 		
+		
+		//connect to Observable
 		fileSystem.attach(pButton);
 		fileSystem.attach(screen);
 		fileSystem.attach(sideBar);
 		fileSystem.attach(pBar);
 		
 		
-		/*Grid pane for folder or file display*/
 		
 		pane.setLeft(sideBox);
 		pane.setTop(topBox);

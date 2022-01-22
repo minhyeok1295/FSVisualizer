@@ -1,12 +1,7 @@
 package util;
 import java.util.ArrayList;
-/**
- * Implement a modification of the Observer/Observable 
- * Design Pattern. See https://www.oodesign.com/observer-pattern.html 
- *
- * @author arnold
- *
- */
+
+
 public class Observable {
 	private ArrayList<Observer> observers = new ArrayList<Observer>();
 	public void attach(Observer o) {

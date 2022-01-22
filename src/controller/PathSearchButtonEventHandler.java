@@ -19,6 +19,7 @@ public class PathSearchButtonEventHandler implements EventHandler<ActionEvent>  
 		this.fs = fs;
 	}
 	
+	//check if given string is a valid path.
 	public boolean isPath(String path) {
 		if (new File(path).exists()) {
 			return true;
@@ -26,7 +27,7 @@ public class PathSearchButtonEventHandler implements EventHandler<ActionEvent>  
 		return false;
 		
 	}
-	
+	//tree search method to recursively search item from the tree
 	public void searchItem(String item) {
 		FSNode res = null;
 		if (this.fs.curr != null) {
